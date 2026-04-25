@@ -1,42 +1,37 @@
-# sv
+# Fábrica Base — Agnostic Component Library
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+> **Fábrica Base** es una plantilla de librería de componentes construida en Svelte 5, diseñada como la "Semilla Pura" para la construcción de sistemas de diseño a gran escala y sitios web orientados al **Green Coding**.
 
-## Creating a project
+## 📖 ¿Qué es esto?
 
-If you're seeing this, you've probably already done this step. Congrats!
+Este repositorio es una base arquitectónica "daltónica" e independiente de la marca. Resuelve el problema de la **Deuda de Identidad**: en lugar de codificar los colores, fuentes y radios de un cliente específico en la lógica de los componentes, la Fábrica Base mantiene una estructura pura en grises.
 
-```sh
-# create a new project
-npx sv create my-app
+El diseño y la identidad visual (el ADN del cliente) se inyectan dinámicamente en tiempo de ejecución a través de variables CSS (`client-brand.css`), lo que permite que una sola base de código en Svelte 5 pueda servir a cientos de clientes distintos sin fricción.
+
+## 🚀 Características Principales
+
+*   **Svelte 5 Puro:** Uso exclusivo de Runes (`$state`, `$derived`, `$props`) y Snippets. Svelte 4 está estrictamente prohibido a nivel de compilador.
+*   **Green Coding:** Presupuestos estrictos de JS (<50KB), CSS (<10KB) y Tree-Shaking silencioso por defecto. Las imágenes utilizan carga diferida asíncrona y no hay dependencias externas de diseño.
+*   **Atomic Design:** Organización estricta de componentes en `atoms`, `molecules`, `organisms` y `templates`.
+*   **Context Engineering:** La carpeta `docs/` contiene reglas de IA (Quality Gates) diseñadas para educar a los agentes LLM, previniendo alucinaciones y evitando la podredumbre del contexto (Context Rot).
+
+## 🛠️ Estructura del Proyecto
+
+*   `/docs/`: Rieles de acero para Inteligencias Artificiales y Humanos. Contiene reglas arquitectónicas, de estilo y de testing.
+*   `/config/`: Motores de configuración (Vite, Svelte, y variables CSS neutrales base).
+*   `/components/`: La librería pura en Svelte 5 (Ej. `Hero.Split.svelte`).
+*   `/utils/`: Herramientas de puente para el cliente (Ej. la plantilla `client-brand.css`).
+
+## ⚙️ Uso Básico
+
+Para construir la librería y verificar la sanidad de Svelte 5:
+
+```bash
+# Validar tipos y sintaxis (Obligatorio)
+bun run check
+
+# Compilar la librería para distribución
+bun run build:lib
 ```
 
-To recreate this project with the same configuration:
-
-```sh
-# recreate this project
-bun x sv@0.15.1 create --template minimal --types ts --add sveltekit-adapter="adapter:static" --no-download-check --install bun ./
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```sh
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```sh
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+> **Para Agentes de IA:** Antes de aportar código, estás OBLIGADO a leer el archivo `docs/AGENTS.md` para entender los Quality Gates y evitar rechazos automatizados.
