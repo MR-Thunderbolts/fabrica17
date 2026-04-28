@@ -1,0 +1,4 @@
+import{_ as e,g as t,it as n,rt as r}from"./dev.js";import*as i from"devalue";function a(r,i){e||n(`hydratable`);let{hydratable:a}=t(),s=a.lookup.get(r);if(s!==void 0)return s.value;let c=i();return s=o(r,c,a.unresolved_promises),a.lookup.set(r,s),c}function o(e,t,n){let a={value:t,serialized:``},o=1;return a.serialized=i.uneval(a.value,(t,i)=>{if(s(t)){let s=`"${o++}"`,l=t.then(e=>{a.serialized=a.serialized.replace(s,`r(${i(e)})`)}).catch(t=>r(e,c(a.stack,t?.stack)));return n?.set(l,e),l.catch(()=>{}).finally(()=>n?.delete(l)),(a.promises??=[]).push(l),s}}),a}function s(e){return Object.prototype.toString.call(e)===`[object Promise]`}function c(e,t){let n=``;return e&&(n+=e+`
+`),t&&(n+=`Caused by:
+`+t+`
+`),n||`<missing stack trace>`}async function l(){}var u=!1;function d(){}function f(){u=!0}export{a,l as i,d as n,f as r,u as t};

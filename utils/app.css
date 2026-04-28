@@ -2,7 +2,7 @@
    GLOBAL STYLES & IMPORTS
    ============================================================ */
 
-@import './tokens.css';
+@import '$root/utils/tokens.css';
 
 /* ============================================================
    GLOBAL RESET & BASE STYLES

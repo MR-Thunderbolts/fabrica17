@@ -1,0 +1,1 @@
+var e=``,t=e,n=`_app`,r={base:e,assets:t};function i(n){e=n.base,t=n.assets}function a(){e=r.base,t=r.assets}function o(e){t=r.assets=e}var s={},c=e=>e?.stack;function l(e){}function u(e){s=e}export{n as a,i as c,u as i,a as l,s as n,t as o,l as r,e as s,c as t,o as u};

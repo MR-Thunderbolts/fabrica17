@@ -1,0 +1,247 @@
+/* ============================================================
+   CICLO17 GLOBAL OVERRIDES
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Roboto+Serif:ital,opsz,wdth,wght@0,8..144,50..150,100..900;1,8..144,50..150,100..900&display=swap');
+
+@import '$root/utils/tokens.css';
+@import '$root/utils/client-brand.css';
+
+*, *::before, *::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: var(--font-body);
+	font-size: var(--text-base);
+	color: var(--color-black);
+	background-color: var(--color-white);
+	-webkit-font-smoothing: antialiased;
+}
+
+/* ── Typography Override ── */
+h1, h2, h3, h4, h5, h6 {
+	font-family: var(--font-headline);
+	font-weight: 400;
+	line-height: 1.2;
+}
+
+h1 { font-size: var(--text-h1); letter-spacing: -1px; }
+h2 { font-size: var(--text-h2); letter-spacing: -0.5px; }
+h3 { font-size: var(--text-h3); }
+h4 { font-size: var(--text-h4); }
+h5 { font-size: var(--text-h5); }
+
+/* ── Navbar Factory Sync ── */
+.navbar {
+	height: var(--navbar-height, 72px) !important;
+	background-color: var(--color-secondary) !important;
+	border-bottom: 1px solid var(--color-border-light) !important;
+}
+
+.navbar__container {
+	padding: 0 var(--page-padding) !important;
+}
+
+.navbar__links {
+	gap: 32px !important;
+}
+
+.nav-link, .nav-links a {
+	font-weight: 400 !important;
+	font-size: 16px !important;
+	color: var(--color-black) !important;
+	text-decoration: none !important;
+}
+
+/* ── Section Factory Sync ── */
+.section[data-bg="default"] {
+	background-color: var(--color-neutral-bg) !important;
+}
+
+.section.section-white {
+	background-color: var(--color-white) !important;
+}
+
+.container {
+	padding: 0 var(--page-padding) !important;
+}
+
+/* ── Heading Component Sync ── */
+.heading {
+	gap: 24px !important;
+	text-align: inherit !important;
+}
+
+.heading__sub {
+	font-size: var(--text-medium) !important;
+	line-height: 1.5 !important;
+	max-width: 768px;
+	margin: 0 auto !important;
+	text-align: inherit !important;
+}
+
+.tagline {
+	font-family: var(--font-body);
+	font-weight: 600;
+	font-size: 16px;
+	color: var(--color-black);
+	margin-bottom: 16px;
+}
+
+/* ── Button Factory Override ── */
+[data-fabrica-button] {
+	font-family: var(--font-body) !important;
+	font-weight: 500 !important;
+	border-radius: var(--radius-pill) !important;
+	box-shadow: var(--shadow-button-outer);
+	position: relative;
+	transition: transform 0.2s ease, opacity 0.2s ease !important;
+}
+
+[data-fabrica-button]:active {
+	transform: scale(0.98);
+}
+
+[data-fabrica-button][data-variant="primary"] {
+	background-color: var(--color-primary) !important;
+	color: var(--color-primary-fg) !important;
+	padding: 10px 24px !important;
+}
+
+[data-fabrica-button][data-variant="primary"]::after {
+	content: '';
+	position: absolute;
+	inset: 0;
+	box-shadow: var(--shadow-button-primary-inner);
+	pointer-events: none;
+	border-radius: inherit;
+}
+
+[data-fabrica-button][data-variant="ghost"],
+[data-fabrica-button][data-variant="secondary"] {
+	background-color: rgba(7, 2, 2, 0.05) !important;
+	color: var(--color-black) !important;
+	padding: 10px 24px !important;
+	border: none !important;
+	box-shadow: 0px 1px 2px 0px rgba(7, 2, 2, 0.05) !important;
+}
+
+[data-fabrica-button][data-variant="ghost"]::after,
+[data-fabrica-button][data-variant="secondary"]::after {
+	content: '';
+	position: absolute;
+	inset: 0;
+	box-shadow: inset 0px -2px 1px 0px rgba(7, 2, 2, 0.05) !important;
+	pointer-events: none;
+	border-radius: inherit;
+}
+
+/* ── Icon Sync ── */
+.icon-pillar {
+	width: 48px;
+	height: 48px;
+}
+
+.icon-small {
+	width: 24px;
+	height: 24px;
+}
+
+/* ── Footer Alignment ── */
+/* ── Media Component Lock ── */
+[data-fabrica-media] {
+	display: flex !important;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	background-color: #e0e4e5 !important;
+	border-radius: var(--radius-large) !important; /* FIXED RADIUS */
+}
+
+[data-fabrica-media].img-hero-main {
+	width: 438px !important;
+	min-width: 438px !important;
+	height: 657px !important;
+	min-height: 657px !important;
+}
+
+[data-fabrica-media].img-hero-sub {
+	width: 328px !important;
+	min-width: 328px !important;
+	height: 328px !important;
+	min-height: 328px !important;
+}
+
+[data-fabrica-media].img-tools {
+	width: 600px !important;
+	min-width: 600px !important;
+	height: 640px !important;
+	min-height: 640px !important;
+}
+
+/* ── Layout Orchestration ── */
+.hero-layout {
+	display: flex;
+	gap: 64px;
+	align-items: center;
+	justify-content: space-between;
+	height: 657px;
+}
+
+.hero-content {
+	flex: 0 0 418px;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.hero-images-flex {
+	display: flex;
+	gap: 32px;
+	align-items: flex-start;
+	min-width: 0;
+	flex-wrap: nowrap;
+}
+
+.features-header {
+	text-align: center;
+	max-width: 768px;
+	margin: 0 auto 80px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.features-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 48px;
+}
+
+.tools-layout {
+	display: flex;
+	gap: 80px;
+	align-items: center;
+}
+
+.footer-card[data-fabrica-card] {
+	background-color: #f2f2f2 !important;
+	padding: 48px !important;
+	border-radius: 40px !important;
+	border: none !important;
+}
+
+.footer-links a {
+	padding: 8px 0;
+	font-size: 14px;
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	color: var(--color-black) !important;
+	text-decoration: none !important;
+	font-family: var(--font-body) !important;
+}

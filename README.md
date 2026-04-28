@@ -1,37 +1,35 @@
-# Fábrica Base — Agnostic Component Library
+# Fábrica Base — Atomic Component Factory (Svelte 5)
 
-> **Fábrica Base** es una plantilla de librería de componentes construida en Svelte 5, diseñada como la "Semilla Pura" para la construcción de sistemas de diseño a gran escala y sitios web orientados al **Green Coding**.
+> **Fábrica Base** is a high-performance, atomic component library built with Svelte 5. It serves as a "Pure Seed" for building scalable, green-coding-compliant design systems.
 
-## 📖 ¿Qué es esto?
+## 🧬 Architectural Philosophy
 
-Este repositorio es una base arquitectónica "daltónica" e independiente de la marca. Resuelve el problema de la **Deuda de Identidad**: en lugar de codificar los colores, fuentes y radios de un cliente específico en la lógica de los componentes, la Fábrica Base mantiene una estructura pura en grises.
+This repository is built on a **"maximal-molecule, inline-organism"** philosophy:
+1.  **Atoms & Molecules** live in the `/factory/` core. They are headless, agnostic, and feature-maximal.
+2.  **Organisms** (Heros, Footers, Cards) are composed inline by agents at assembly time to ensure zero "Identity Debt."
+3.  **Identity Injection**: Visual DNA is injected via `utils/client-brand.css`, keeping the component logic pure and daltonic.
 
-El diseño y la identidad visual (el ADN del cliente) se inyectan dinámicamente en tiempo de ejecución a través de variables CSS (`client-brand.css`), lo que permite que una sola base de código en Svelte 5 pueda servir a cientos de clientes distintos sin fricción.
+## 🛠️ Project Structure
 
-## 🚀 Características Principales
+*   **`/factory/`**: The core Atomic Design System.
+    *   `/src/lib/components/`: Atoms (primitives) and Molecules (compounds).
+    *   `/assets/icons/`: Internal 1500+ icon collection (Phosphor). Use via `virtual:icons/factory/[name]`.
+*   **`/governance/`**: "Steel Rails" for AI and Humans. Architecture, Style, and Green Coding rules.
+*   **`/utils/`**: Identity bridge (CSS tokens, navigation config, theme settings).
+*   **`FABRICA_STATE_PLAYBOOK.md`**: The living memory and correction log of the factory state.
 
-*   **Svelte 5 Puro:** Uso exclusivo de Runes (`$state`, `$derived`, `$props`) y Snippets. Svelte 4 está estrictamente prohibido a nivel de compilador.
-*   **Green Coding:** Presupuestos estrictos de JS (<50KB), CSS (<10KB) y Tree-Shaking silencioso por defecto. Las imágenes utilizan carga diferida asíncrona y no hay dependencias externas de diseño.
-*   **Atomic Design:** Organización estricta de componentes en `atoms`, `molecules`, `organisms` y `templates`.
-*   **Context Engineering:** La carpeta `docs/` contiene reglas de IA (Quality Gates) diseñadas para educar a los agentes LLM, previniendo alucinaciones y evitando la podredumbre del contexto (Context Rot).
-
-## 🛠️ Estructura del Proyecto
-
-*   `/docs/`: Rieles de acero para Inteligencias Artificiales y Humanos. Contiene reglas arquitectónicas, de estilo y de testing.
-*   `/config/`: Motores de configuración (Vite, Svelte, y variables CSS neutrales base).
-*   `/components/`: La librería pura en Svelte 5 (Ej. `Hero.Split.svelte`).
-*   `/utils/`: Herramientas de puente para el cliente (Ej. la plantilla `client-brand.css`).
-
-## ⚙️ Uso Básico
-
-Para construir la librería y verificar la sanidad de Svelte 5:
+## 🚀 Key Commands
 
 ```bash
-# Validar tipos y sintaxis (Obligatorio)
+# Validate Svelte 5 syntax and types
 bun run check
 
-# Compilar la librería para distribución
+# Start development environment
+bun run dev
+
+# Build for distribution
 bun run build:lib
 ```
 
-> **Para Agentes de IA:** Antes de aportar código, estás OBLIGADO a leer el archivo `docs/AGENTS.md` para entender los Quality Gates y evitar rechazos automatizados.
+## 🤖 For AI Agents
+Before contributing, you are **OBLIGATED** to read the `governance/` directory and the `FABRICA_STATE_PLAYBOOK.md`. Strictly follow the **Atomic Evolution** protocol (organisms are composed, not stored).

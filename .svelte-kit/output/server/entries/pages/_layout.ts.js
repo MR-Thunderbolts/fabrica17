@@ -1,0 +1,1 @@
+var e=!0,t=`always`;export{e as prerender,t as trailingSlash};

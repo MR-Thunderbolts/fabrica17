@@ -1,0 +1,1 @@
+import{I as e,Lt as t,R as n,_t as r,dt as i,ft as a,gt as o,v as s,z as c,zt as l}from"./CHtVM-Vl.js";function u(u,d){let f=null,p=a;var m;if(a){f=i;for(var h=n(document.head);h!==null&&(h.nodeType!==8||h.data!==u);)h=c(h);if(h===null)r(!1);else{var g=c(h);h.remove(),o(g)}}a||(m=document.head.appendChild(e()));try{s(()=>d(m),l|t)}finally{p&&(r(!0),o(f))}}export{u as t};

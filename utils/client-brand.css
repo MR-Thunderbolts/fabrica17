@@ -1,46 +1,51 @@
-/* ============================================================
-   CLIENT BRAND TOKENS OVERRIDE
-   This file acts as the bridge between the Fábrica Base and the client's identity.
-   Values here will override the neutral defaults in tokens.css.
-   
-   ⚠️ ATENCIÓN AGENTES DE IA (AI WARNING):
-   NUNCA conviertan este archivo a SCSS, SASS, o tokens de JavaScript.
-   Debe permanecer estrictamente como Variables CSS Nativas (CSS Custom Properties) 
-   en la pseudo-clase :root. 
-   
-   ¿Por qué?: La librería base (Fábrica) ya está pre-compilada. La única forma en 
-   que la librería puede heredar los colores del cliente en tiempo de ejecución (runtime) 
-   es mediante el efecto cascada del DOM con CSS nativo.
-   ============================================================ */
-
 :root {
-	/* ── Semantic Colors (Client Overrides) ── */
-	--color-primary: #0055FF; /* Replace with client primary */
-	--color-primary-dark: #003399; /* Replace with client primary dark */
-	--color-secondary: #0088FF;
-	--color-tertiary: #55AAFF;
-	--color-accent-dark: #001133;
-
-	--color-neutral-bg: #F8F9FA;
-	--color-neutral-warm: #FFFFFF;
-
-	--color-text-primary: #111111;
-	--color-text-body: #333333;
-	--color-text-muted: #666666;
-
-	/* ── Typography (Client Overrides) ── */
-	/* 
-	   Ensure these fonts are loaded via CSS @import or <link> in app.html
-	   Example: --font-headline: 'Roboto', system-ui, sans-serif;
-	*/
-	--font-headline: system-ui, -apple-system, sans-serif;
-	--font-body: system-ui, -apple-system, sans-serif;
-	--font-nav: system-ui, -apple-system, sans-serif;
-
-	/* ── Component Specific Overrides ── */
-	/* 
-	   Uncomment and modify if the client design differs from the base layout geometry.
-	   --button-radius: 8px;
-	   --navbar-height: 100px;
-	*/
+	/* ── Ciclo17 — High-Fidelity Brand Layer ── */
+	
+	/* Brand Colors */
+	--color-primary: #2a8f6e; /* Eucalyptus */
+	--color-primary-fg: #ffffff;
+	--color-secondary: #e9f3f0; /* Scheme 1 Background */
+	--color-white: #ffffff;
+	--color-black: #070202;
+	
+	/* Neutrals & Opacities */
+	--color-neutral-bg: #e9f3f0;
+	--color-text-primary: #070202;
+	--color-text-body: #070202;
+	--color-text-heading: #070202;
+	--color-text-muted: rgba(7, 2, 2, 0.6);
+	--color-border-light: rgba(7, 2, 2, 0.15);
+	
+	/* Spacing Context (Figma specific) */
+	--page-padding: 64px;
+	--section-padding-large: 112px;
+	--section-padding-medium: 80px;
+	--navbar-height: 72px;
+	
+	/* Typography Scale */
+	--font-headline: 'Roboto Serif', serif;
+	--font-body: 'DM Sans', sans-serif;
+	
+	--text-h1: 64px;
+	--text-h2: 52px;
+	--text-h3: 40px;
+	--text-h4: 36px;
+	--text-h5: 28px;
+	--text-base: 16px;
+	--text-medium: 18px;
+	--text-small: 14px;
+	--text-tiny: 12px;
+	
+	/* Radii */
+	--radius-large: 40px;
+	--radius-pill: 100px;
+	
+	/* Effects */
+	--shadow-button-outer: 0px 1px 1px rgba(7, 2, 2, 0.05);
+	--shadow-button-primary-inner: 
+		inset 0px 32px 24px 0px rgba(255, 255, 255, 0.05),
+		inset 0px 2px 1px 0px rgba(255, 255, 255, 0.25),
+		inset 0px -2px 1px 0px rgba(0, 0, 0, 0.2);
+	--shadow-button-secondary-inner: 
+		inset 0px -2px 1px 0px rgba(7, 2, 2, 0.05);
 }
