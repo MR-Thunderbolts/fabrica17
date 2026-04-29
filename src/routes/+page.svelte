@@ -1,33 +1,35 @@
 <script lang="ts">
-	import { 
-		Navbar, 
-		Section, 
-		Heading, 
-		Button, 
-		Media, 
-		Icon, 
-		Card
-	} from '$root/factory/src/lib/components';
-	
-	// Icons
-	import IconGlobe from '~icons/lucide/globe';
-	import IconMagnifyingGlass from '~icons/lucide/search';
-	import IconCpu from '~icons/lucide/cpu';
-	import IconMousePointer from '~icons/lucide/mouse-pointer-2';
-	import IconMaximize from '~icons/lucide/maximize';
-	import IconTwitter from '~icons/lucide/twitter';
-	import IconInstagram from '~icons/lucide/instagram';
-	import IconLinkedin from '~icons/lucide/linkedin';
-	import IconGithub from '~icons/lucide/github';
-	import IconMail from '~icons/lucide/mail';
-	import IconChevronRight from '~icons/lucide/chevron-right';
-	import IconImage from '~icons/lucide/image';
-	import IconFacebook from '~icons/lucide/facebook';
-	import IconYoutube from '~icons/lucide/youtube';
-	import IconChevronDown from '~icons/lucide/chevron-down';
-	import IconDraftingCompass from '~icons/lucide/drafting-compass';
-	import IconZap from '~icons/lucide/zap';
-	import IconLayout from '~icons/lucide/layout';
+	import {
+		Navbar,
+		Section,
+		Heading,
+		Button,
+		Media,
+		Icon,
+		Card,
+	} from "$root/factory/src/lib/components";
+
+	// Icons (Local Factory Collection)
+	import IconAperture from "~icons/factory/aperture";
+	import IconGlobe from "~icons/factory/globe";
+	import IconMagnifyingGlass from "~icons/factory/magnifying-glass";
+	import IconCpu from "~icons/factory/cpu";
+	import IconMousePointer from "~icons/factory/cursor";
+	import IconMaximize from "~icons/factory/corners-out";
+	import IconTwitter from "~icons/factory/twitter-logo";
+	import IconInstagram from "~icons/factory/instagram-logo";
+	import IconLinkedin from "~icons/factory/linkedin-logo";
+	import IconGithub from "~icons/factory/github-logo";
+	import IconMail from "~icons/factory/envelope";
+	import IconChevronRight from "~icons/factory/caret-right";
+	import IconImage from "~icons/factory/image";
+	import IconFacebook from "~icons/factory/facebook-logo";
+	import IconYoutube from "~icons/factory/youtube-logo";
+	import IconChevronDown from "~icons/factory/caret-down";
+	import IconWrench from "~icons/factory/wrench";
+	import IconFunction from "~icons/factory/function";
+	import IconMinus from "~icons/factory/minus";
+	import IconDesktop from "~icons/factory/desktop";
 </script>
 
 <svelte:head>
@@ -38,12 +40,12 @@
 	<Navbar.Brand>
 		<div class="logo">Logo</div>
 	</Navbar.Brand>
-	
-	<Navbar.Links 
+
+	<Navbar.Links
 		links={[
-			{ label: 'Nosotros', href: '#nosotros' },
-			{ label: 'Blog', href: '#blog' },
-			{ label: 'Sustentabilidad', href: '#sustentabilidad' }
+			{ label: "Nosotros", href: "#nosotros" },
+			{ label: "Blog", href: "#blog" },
+			{ label: "Sustentabilidad", href: "#sustentabilidad" },
 		]}
 	>
 		<div class="nav-dropdown nav-link">
@@ -67,7 +69,8 @@
 					</div>
 					<div class="hero-text-area">
 						<p class="hero-subtext">
-							Fast, sustainable, and built for everyone. We create sites that perform without compromise.
+							Fast, sustainable, and built for everyone. We create
+							sites that perform without compromise.
 						</p>
 						<div class="hero-actions">
 							<Button variant="primary">Start now</Button>
@@ -98,8 +101,8 @@
 		{#snippet content()}
 			<div class="features-header">
 				<p class="tagline">Essentials</p>
-				<Heading 
-					level="h2" 
+				<Heading
+					level="h2"
 					subheading="We build on a foundation of speed, sustainability, and inclusion. Every decision we make serves these three commitments."
 					class="centered-heading"
 				>
@@ -110,29 +113,52 @@
 			<div class="features-grid">
 				<div class="feature-item">
 					<div class="icon-wrapper">
-						<Icon icon={IconGlobe} class="icon-pillar" />
+						<Icon
+							icon={IconAperture}
+							size={48}
+							class="icon-pillar"
+						/>
 					</div>
 					<div class="feature-text">
-						<Heading level="h4" class="centered-heading">Sustainable digital</Heading>
-						<p>Websites that reduce environmental impact with every page load.</p>
+						<Heading level="h4" class="centered-heading"
+							>Sustainable digital</Heading
+						>
+						<p>
+							Websites that reduce environmental impact with every
+							page load.
+						</p>
 					</div>
 				</div>
 				<div class="feature-item">
 					<div class="icon-wrapper">
-						<Icon icon={IconMagnifyingGlass} class="icon-pillar" />
+						<Icon
+							icon={IconMagnifyingGlass}
+							size={48}
+							class="icon-pillar"
+						/>
 					</div>
 					<div class="feature-text">
-						<Heading level="h4" class="centered-heading">Fast loading</Heading>
-						<p>Performance that keeps visitors engaged and search engines satisfied.</p>
+						<Heading level="h4" class="centered-heading"
+							>Fast loading</Heading
+						>
+						<p>
+							Performance that keeps visitors engaged and search
+							engines satisfied.
+						</p>
 					</div>
 				</div>
 				<div class="feature-item">
 					<div class="icon-wrapper">
-						<Icon icon={IconGlobe} class="icon-pillar" />
+						<Icon icon={IconGlobe} size={48} class="icon-pillar" />
 					</div>
 					<div class="feature-text">
-						<Heading level="h4" class="centered-heading">Web accessibility</Heading>
-						<p>Design that works for everyone, regardless of ability or device.</p>
+						<Heading level="h4" class="centered-heading"
+							>Web accessibility</Heading
+						>
+						<p>
+							Design that works for everyone, regardless of
+							ability or device.
+						</p>
 					</div>
 				</div>
 			</div>
@@ -160,45 +186,31 @@
 				<div class="tools-content">
 					<div class="tools-grid">
 						<div class="tool-item">
-							<Icon icon={IconDraftingCompass} class="icon-pillar" />
+							<Icon icon={IconWrench} size={48} class="icon-pillar" />
 							<div class="tool-text">
 								<Heading level="h5">Understand your needs</Heading>
 								<p>We listen first, then build with purpose and clarity.</p>
 							</div>
 						</div>
 						<div class="tool-item">
-							<Icon icon={IconLayout} class="icon-pillar" />
+							<Icon icon={IconFunction} size={48} class="icon-pillar" />
 							<div class="tool-text">
 								<Heading level="h5">Design lean</Heading>
 								<p>Every element serves a function, nothing more, nothing less.</p>
 							</div>
 						</div>
 						<div class="tool-item">
-							<Icon icon={IconMaximize} class="icon-pillar" />
+							<Icon icon={IconMinus} size={48} class="icon-pillar" />
 							<div class="tool-text">
 								<Heading level="h5">Optimize ruthlessly</Heading>
 								<p>Code, images, and assets trimmed to their essential core.</p>
 							</div>
 						</div>
 						<div class="tool-item">
-							<Icon icon={IconZap} class="icon-pillar" />
+							<Icon icon={IconDesktop} size={48} class="icon-pillar" />
 							<div class="tool-text">
 								<Heading level="h5">Launch and measure</Heading>
 								<p>Monitor performance and impact, then refine what matters most.</p>
-							</div>
-						</div>
-						<div class="tool-item">
-							<Icon icon={IconImage} class="icon-pillar" />
-							<div class="tool-text">
-								<Heading level="h5">Short heading here</Heading>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-							</div>
-						</div>
-						<div class="tool-item">
-							<Icon icon={IconImage} class="icon-pillar" />
-							<div class="tool-text">
-								<Heading level="h5">Short heading here</Heading>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 							</div>
 						</div>
 					</div>
@@ -220,16 +232,25 @@
 				<div class="footer-main-layout">
 					<div class="newsletter-col">
 						<div class="footer-logo">Logo</div>
-						<p class="footer-tagline">Get updates on new tools and sustainable web practices.</p>
+						<p class="footer-tagline">
+							Get updates on new tools and sustainable web
+							practices.
+						</p>
 						<div class="newsletter-actions">
 							<div class="newsletter-form">
-								<input type="email" placeholder="Your email address" class="email-input" />
+								<input
+									type="email"
+									placeholder="Your email address"
+									class="email-input"
+								/>
 								<Button variant="secondary">Subscribe</Button>
 							</div>
-							<p class="privacy-note">We respect your privacy and keep things clean</p>
+							<p class="privacy-note">
+								We respect your privacy and keep things clean
+							</p>
 						</div>
 					</div>
-					
+
 					<div class="link-cols">
 						<div class="link-col">
 							<h6 class="footer-heading">Stay in the loop</h6>
@@ -245,7 +266,9 @@
 							<h6 class="footer-heading">Resources</h6>
 							<div class="footer-links">
 								<a href="#blog">Blog</a>
-								<a href="#sustentabilidad">Sustentabilidad digital</a>
+								<a href="#sustentabilidad"
+									>Sustentabilidad digital</a
+								>
 								<a href="#nosotros">Nosotros</a>
 								<a href="#home">Home</a>
 								<a href="#contact">Contact</a>
@@ -254,11 +277,21 @@
 						<div class="link-col">
 							<h6 class="footer-heading">Connect</h6>
 							<div class="footer-links">
-								<a href="#twitter"><Icon icon={IconTwitter} size="24" /> Twitter</a>
-								<a href="#instagram"><Icon icon={IconInstagram} size="24" /> Instagram</a>
-								<a href="#linkedin"><Icon icon={IconLinkedin} size="24" /> LinkedIn</a>
-								<a href="#github"><Icon icon={IconGithub} size="24" /> GitHub</a>
-								<a href="#email"><Icon icon={IconMail} size="24" /> Email</a>
+								<a href="#twitter"
+									><Icon icon={IconTwitter} size="24" /> Twitter</a
+								>
+								<a href="#instagram"
+									><Icon icon={IconInstagram} size="24" /> Instagram</a
+								>
+								<a href="#linkedin"
+									><Icon icon={IconLinkedin} size="24" /> LinkedIn</a
+								>
+								<a href="#github"
+									><Icon icon={IconGithub} size="24" /> GitHub</a
+								>
+								<a href="#email"
+									><Icon icon={IconMail} size="24" /> Email</a
+								>
 							</div>
 						</div>
 					</div>
@@ -350,11 +383,10 @@
 	}
 
 	.icon-wrapper {
-		width: 48px;
-		height: 48px;
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		margin-bottom: 8px;
 	}
 
 	.feature-text {
@@ -494,7 +526,7 @@
 
 	.footer-bottom-credits {
 		padding-top: 32px;
-		border-top: 1px solid rgba(0,0,0,0.1);
+		border-top: 1px solid rgba(0, 0, 0, 0.1);
 		font-family: var(--font-body);
 	}
 
@@ -538,7 +570,8 @@
 	}
 
 	@media (max-width: 1024px) {
-		.tools-layout, .footer-main-layout {
+		.tools-layout,
+		.footer-main-layout {
 			flex-direction: column;
 			height: auto;
 		}
